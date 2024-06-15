@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+.style_hamburger {
+  height: 2px;
+  width: 100%;
+  border-radius: 5px;
+  transition: all 0.5s;
+  transform-origin: left;
+}
+.mask-linear-gradient-black {
+  mask-image: linear-gradient(black 2%, transparent);
+}
+.mask-linear-gradient-black-descont {
+  mask-image: linear-gradient(to top, black 90%, transparent);
+}
+
+.btn-hamburger .style_hamburger:first-child {
+  transform: rotate(45deg);
+}
+.btn-hamburger .style_hamburger:nth-child(2) {
+  opacity: 0;
+}
+.btn-hamburger .style_hamburger:last-child {
+  transform: rotate(-45deg);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  /*SCROLL STYLE*/
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 2px;
+    border-radius: 2px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #fff;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #0070f08b;
+    border-radius: 50px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #0070F0;
+  }
+
+  /* Estilos para el tema oscuro */
+.dark .custom-scrollbar::-webkit-scrollbar-track {
+  background: #09090a; /* Cambia este color según tu tema oscuro */
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #0070f0; /* Cambia este color según tu tema oscuro */
+}
+  /**/
+  /*EFFECT TRANSITION ALL*/
+  .transition_effect{
+    @apply transition-all ease-out duration-1000
+  }
+  /**/
+  .border_style {
+    @apply border border-dark-text hover:border-light-primary transition-all ease-in-out hover:dark:border-dark-primary;
+  }
+  .style_icon {
+    @apply text-dark-text cursor-pointer text-[17px]  rounded-full dark:border-dark-text  p-2 hover:scale-105 border_style;
+  }
+  /*SECTION TEXT*/
+  .text_color {
+    @apply text-light-text dark:text-dark-text;
+  }
+  .verySmall_text{
+    @apply  text-[11px] font-semibold;
+  }
+  .small_text {
+    @apply  text-sm font-bold;
+  }
+  .medium_text{
+    @apply text-[19px] lg:text-[24px] 2xl:text-[32px]   font-light
+  }
+  .medium_text_last{
+    @apply text-[13px] lg:text-[14px] 2xl:text-[16px]   font-bold
+  }
+  .big_text {
+    @apply  text-[22px] sm:text-[34px]  2xl:text-[60px] font-light uppercase;
+  }
+  
+ 
+  /**/
+
+  /*STYLE_BTN*/
+  .style_btn_transparent{
+    @apply w-full outline-none border-none text-center 
+  }
+ 
+  .content_btn_bg_blue{
+    @apply border py-2 lg:py-4 w-[85%] lg:w-max lg:px-12 border-dark-text   hover:scale-105 transition_effect  text-dark-text bg-light-primary dark:bg-dark-primary cursor-pointer
+  }
+  .content_btn{
+    @apply border py-2 lg:py-4 w-[85%] lg:w-max lg:px-12 border-light-text dark:border-dark-text hover:scale-105 transition_effect  text-light-text dark:text-dark-text cursor-pointer 
+  }
+  .content_btn_dark{
+    @apply border py-3 lg:py-4 w-[85%] lg:w-max lg:px-12 border-light-text  hover:scale-105 transition_effect cursor-pointer  text-light-text 
+  }
+  .content_btn_light{
+    @apply border py-2 lg:py-3 w-[85%] lg:w-max lg:px-40  border-dark-text  hover:scale-105 transition_effect cursor-pointer  text-dark-text 
+  }
+
+  /**/
+  .full {
+    @apply h-full w-full;
+  }
+}
