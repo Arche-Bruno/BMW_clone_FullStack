@@ -13,12 +13,7 @@ import Link from "next/link";
 const NavBar = () => {
   const [showNavMobile, setShowNavMobile] = useState<boolean>(false);
   const [isSelected, setIsSelected] = useState<number>(0);
-  const [theme, setTheme] = useState(() => {
-    if (window.matchMedia("(prefers-color-scheme:dark)").matches) {
-      return "dark";
-    }
-    return "light";
-  });
+  const [theme, setTheme] = useState("dark");
 
   const handleModeTheme = () => {
     if (theme === "dark") {
@@ -45,7 +40,7 @@ const NavBar = () => {
   };
 
   return (
-    <div className="relative w-full h-full flex justify-between py-2">
+    <div className="relative w-full h-full  flex justify-between py-2">
       <div
         className={` ${
           showNavMobile
